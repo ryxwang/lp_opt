@@ -36,7 +36,7 @@ Start and end coordinates of TADs.
 * Calling TADs on a segment of chr21 (Hi-C data from Rao et al. 2014):  
 
 `hic_file = './input/chr21_HUVEC_example.txt';`  
-`ctcf_file = './input/chr21_HUVEC_ctcf_example.txt';`
+`ctcf_file = './input/chr21_HUVEC_ctcf_example.txt';`  
 `outfile= './output/chr21_HUVEC_tads.txt';`  
 `bin_size = 10000;`  
 `q=[0.9,0.5,0.5]; %thresholds for each level`  
@@ -49,7 +49,7 @@ Start and end coordinates of TADs.
 `hic_files={hic_file1, hic_file2};`  
 `ctcf_file1 = './input/chr21_HUVEC_ctcf_example.txt';`  
 `ctcf_file2 = './input/chr21_HMEC_ctcf_example.txt';`  
-`ctcf_files={ctcf_file1, ctcf_file2};`
+`ctcf_files={ctcf_file1, ctcf_file2};`  
 `outfile= './output/chr21_combined_tads.txt';`
 `bin_size = 10000;`  
 `q=[0.9,0.5,0.5]; %thresholds for each level`  
