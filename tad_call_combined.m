@@ -1,4 +1,4 @@
-function [bd_start, bd_end, pval] = tad_call_combined(hic_files, ctcf_files, bin_size, q)
+function [bd_start, bd_end, pval] = tad_call_combined(hic_files, ctcf_files, bin_size, q, outfile)
 
 %hic_file1 = './input/chr21_GM12878_example.txt';
 %hic_file2 = './input/chr21_HUVEC_example.txt';
@@ -82,5 +82,5 @@ end
 
 bd_start = bd_tot_lp(:,1)+start_ind-1; bd_end = bd_tot_lp(:,2)+start_ind-1;
 pval=bd_tot_lp(:,4:(4+L-1));
-dlmwrite('./output/chr21_combined_tads.txt',[(bd_start-0.5)*bin_size, (bd_end-0.5)*bin_size]);
+dlmwrite(outfile,[(bd_start-0.5)*bin_size, (bd_end-0.5)*bin_size]);
 end

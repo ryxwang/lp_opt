@@ -1,4 +1,4 @@
-function [bd_start, bd_end, pval] = tad_call(hic_file, ctcf_file, bin_size, q)
+function [bd_start, bd_end, pval] = tad_call(hic_file, ctcf_file, bin_size, q, outfile)
 
 %hic_file = './input/chr21_GM12878_example.txt';
 %ctcf_file = './input/chr21_GM12878_ctcf_example.txt'; 
@@ -60,5 +60,5 @@ end
 
 bd_start = bd_tot_lp(:,1)+start_ind-1; bd_end = bd_tot_lp(:,2)+start_ind-1;
 pval=bd_tot_lp(:,4);
-dlmwrite('./output/chr21_GM12878_tads.txt',[(bd_start-0.5)*bin_size, (bd_end-0.5)*bin_size], '\t');
+dlmwrite(outfile,[(bd_start-0.5)*bin_size, (bd_end-0.5)*bin_size], '\t');
 end
