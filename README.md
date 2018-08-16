@@ -25,9 +25,9 @@ A list of CTCF indices which is a subset of 1:n, where n is the size of the Hi-C
 **Output files**
 * TAD coordinates  
 
-1.5755e+07	1.6225e+07  
+1.5775e+07	1.6235e+07  
 1.6435e+07	1.6895e+07  
-1.7405e+07	1.8585e+07  
+1.6965e+07	1.7265e+07   
 ……  
 
 Start and end coordinates of TADs.
@@ -35,23 +35,25 @@ Start and end coordinates of TADs.
 **Usage**
 * Calling TADs on a segment of chr21 (Hi-C data from Rao et al. 2014):  
 
-`hic_file = './input/chr21_GM12878_example.txt';`  
-`ctcf_file = './input/chr21_GM12878_ctcf_example.txt';`   
+`hic_file = './input/chr21_HUVEC_example.txt';`  
+`ctcf_file = './input/chr21_HUVEC_ctcf_example.txt';`
+`outfile= './output/chr21_HUVEC_tads.txt';`  
 `bin_size = 10000;`  
 `q=[0.9,0.5,0.5]; %thresholds for each level`  
-`[bd_start, bd_end, pval] = tad_call(hic_file, ctcf_file, bin_size, q);`  
+`[bd_start, bd_end, pval] = tad_call(hic_file, ctcf_file, bin_size, q, outfile);`  
 
 * Calling TADs on a segment of chr21 jointly for two cell types:
 
-`hic_file1 = './input/chr21_GM12878_example.txt';`  
-`hic_file2 = './input/chr21_HUVEC_example.txt';`  
+`hic_file1 = './input/chr21_HUVEC_example.txt';`  
+`hic_file2 = './input/chr21_HMEC_example.txt';`  
 `hic_files={hic_file1, hic_file2};`  
-`ctcf_file1 = './input/chr21_GM12878_ctcf_example.txt';`  
-`ctcf_file2 = './input/chr21_HUVEC_ctcf_example.txt';`  
-`ctcf_files={ctcf_file1, ctcf_file2};`  
+`ctcf_file1 = './input/chr21_HUVEC_ctcf_example.txt';`  
+`ctcf_file2 = './input/chr21_HMEC_ctcf_example.txt';`  
+`ctcf_files={ctcf_file1, ctcf_file2};`
+`outfile= './output/chr21_combined_tads.txt';`
 `bin_size = 10000;`  
 `q=[0.9,0.5,0.5]; %thresholds for each level`  
-`[bd_start, bd_end, pval] = tad_call_combined(hic_files, ctcf_files, bin_size, q);`  
+`[bd_start, bd_end, pval] = tad_call_combined(hic_files, ctcf_files, bin_size, q, outfile);`  
 
 
 
