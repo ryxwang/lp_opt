@@ -22,7 +22,7 @@
 
 A list of CTCF indices which is a subset of 1:n, where n is the size of the Hi-C input matrix
 
-**Output files**
+**Output file**
 * TAD coordinates  
 
 1.5775e+07	1.6235e+07  
