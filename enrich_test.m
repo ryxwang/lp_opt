@@ -1,3 +1,4 @@
+%two-sample rank test
 function p_val = enrich_test(M_tot, bd_ind, start_ind)
 n_max = size(M_tot,1);
 inner_ind = bd_ind-start_ind+1; inner_n = inner_ind(2)-inner_ind(1)+1;
